@@ -18,14 +18,11 @@
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--noir);color:var(--cream);overflow-x:hidden;cursor:none;line-height:1.6}
 
-/* subtle noise texture overlay */
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.028;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-/* CURSOR */
 #cur{width:9px;height:9px;background:var(--crimson);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
 #cur-ring{width:36px;height:36px;border:1px solid rgba(197,3,55,.38);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .22s,height .22s,border-color .22s}
 
-/* NAV */
 nav{position:fixed;top:1.2rem;left:50%;transform:translateX(-50%);z-index:100;
   display:flex;align-items:center;gap:2rem;padding:.75rem 2.2rem;
   background:rgba(6,3,15,0.5);
@@ -37,7 +34,6 @@ nav a{font-size:.71rem;letter-spacing:.18em;text-transform:uppercase;color:var(-
 nav a:hover{color:var(--cream)}
 .ndot{width:3px;height:3px;border-radius:50%;background:rgba(240,230,208,.12)}
 
-/* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
   text-align:center;padding:9rem 2rem 5rem;position:relative;overflow:hidden}
 
@@ -47,12 +43,10 @@ nav a:hover{color:var(--cream)}
     radial-gradient(ellipse 50% 40% at 20% 20%, rgba(61,0,21,0.3) 0%, transparent 60%),
     radial-gradient(ellipse 40% 35% at 80% 15%, rgba(197,3,55,0.06) 0%, transparent 55%)}
 
-/* subtle grid */
 .hgrid{position:absolute;inset:0;opacity:.025;
   background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(240,230,208,1) 80px),
     repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(240,230,208,1) 80px)}
 
-/* floating elements */
 .floats{position:absolute;inset:0;pointer-events:none;z-index:1}
 .fl{position:absolute}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
@@ -68,7 +62,6 @@ nav a:hover{color:var(--cream)}
 .hl3{font-family:'DM Sans',sans-serif;font-weight:300;font-size:clamp(.85rem,1.8vw,1.25rem);
   letter-spacing:.38em;text-transform:uppercase;color:var(--cream-dim);display:block;margin-top:.9rem}
 
-/* BIGGER tagline */
 .h-tag{position:relative;z-index:2;margin-top:2.5rem;max-width:560px;
   font-family:'Playfair Display',serif;font-style:italic;
   font-size:clamp(1.25rem,2.5vw,1.75rem);line-height:1.55;color:rgba(240,230,208,.75);
@@ -81,18 +74,15 @@ nav a:hover{color:var(--cream)}
 .bo{padding:.88rem 2.3rem;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;border:1px solid var(--border-c);border-radius:100px;transition:all .3s;display:inline-block}
 .bo:hover{border-color:rgba(197,3,55,.4);color:var(--cream);background:var(--crimson-glow)}
 
-/* CHAPTER LABEL */
 .ch{display:flex;align-items:center;gap:.8rem;font-size:.61rem;letter-spacing:.28em;text-transform:uppercase;color:var(--crimson);margin-bottom:3rem}
 .ch::before{content:'';width:26px;height:1px;background:var(--crimson)}
 .cn{font-family:'Playfair Display',serif;font-style:italic;font-size:.92rem;color:rgba(197,3,55,.3);margin-right:.15rem}
 
-/* SECTION BASE */
 section{position:relative;z-index:1}
 .sec-light{padding:8rem 6rem;background:var(--noir-2)}
 .sec-dark{padding:8rem 6rem;background:var(--noir-3)}
 .sec-mid{padding:8rem 6rem;background:var(--noir)}
 
-/* WORK */
 .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:.5rem}
 .wc{background:var(--surface);border:1px solid var(--border-c);padding:2.8rem;position:relative;
   overflow:hidden;text-decoration:none;color:inherit;display:block;
@@ -110,36 +100,14 @@ section{position:relative;z-index:1}
 .wc.feat{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:3rem}
 .wc.feat .wtitle{font-size:2.1rem}
 
-/* TAGS */
+/* live badge */
+.live-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.28rem .75rem;background:rgba(197,3,55,.1);border:1px solid rgba(197,3,55,.28);color:rgba(197,3,55,.9);border-radius:100px;margin-bottom:1.2rem}
+.live-dot{width:5px;height:5px;border-radius:50%;background:var(--crimson);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
 .tags{display:flex;flex-wrap:wrap;gap:.35rem}
 .tag{font-size:.63rem;letter-spacing:.07em;padding:.22rem .65rem;border:1px solid var(--border-c);color:var(--cream-dim);text-transform:uppercase;border-radius:100px}
 
-/* CRAFT / SKILLS */
-.craft-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:.5rem}
-.craft-left{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border-c);border:1px solid var(--border-c);border-radius:16px;overflow:hidden}
-.sk{background:var(--noir-2);padding:2rem;transition:background .3s;position:relative;overflow:hidden}
-.sk::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--crimson),transparent);transform:scaleX(0);transition:transform .4s;transform-origin:left}
-.sk:hover{background:var(--noir-3)}
-.sk:hover::before{transform:scaleX(1)}
-.sk-num{font-family:'Playfair Display',serif;font-style:italic;font-size:1.8rem;color:var(--crimson);opacity:.2;margin-bottom:.6rem;line-height:1}
-.sk-title{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--cream);margin-bottom:.9rem;font-weight:500}
-
-/* CERT CARDS */
-.craft-right{display:flex;flex-direction:column;gap:1.5rem;justify-content:center}
-.cert-card{background:var(--surface);border:1px solid var(--border-c);border-radius:16px;padding:2rem 2.2rem;transition:background .3s,border-color .3s}
-.cert-card:hover{background:var(--surface-hover);border-color:rgba(197,3,55,.22)}
-.cert-label{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--crimson);margin-bottom:.6rem}
-.cert-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:400;color:var(--cream);margin-bottom:.3rem}
-.cert-sub{font-size:.78rem;color:var(--cream-dim)}
-.cert-badge{display:inline-flex;align-items:center;gap:.4rem;margin-top:.8rem;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;background:var(--crimson-glow);border:1px solid var(--border-red);color:rgba(197,3,55,.8);border-radius:100px}
-
-/* AI AWARENESS note */
-.ai-note{background:var(--surface);border:1px solid var(--border-c);border-left:2px solid var(--crimson);border-radius:0 12px 12px 0;padding:1.4rem 1.8rem;margin-top:1.5rem}
-.ai-note .ai-label{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--crimson);margin-bottom:.5rem}
-.ai-note p{font-size:.85rem;line-height:1.7;color:var(--cream-dim)}
-.ai-note p strong{color:var(--cream);font-weight:400}
-
-/* CRAFT - full redesign for coherence */
 .craft-grid{display:flex;flex-direction:column;gap:2rem;margin-top:.5rem}
 .craft-skills{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border-c);border:1px solid var(--border-c);border-radius:16px;overflow:hidden}
 .craft-certs{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
@@ -150,7 +118,13 @@ section{position:relative;z-index:1}
 .sk-num{font-family:'Playfair Display',serif;font-style:italic;font-size:1.8rem;color:var(--crimson);opacity:.2;margin-bottom:.6rem;line-height:1}
 .sk-title{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--cream);margin-bottom:.9rem;font-weight:500}
 
-/* ABOUT - fix layout */
+.cert-card{background:var(--surface);border:1px solid var(--border-c);border-radius:16px;padding:2rem 2.2rem;transition:background .3s,border-color .3s}
+.cert-card:hover{background:var(--surface-hover);border-color:rgba(197,3,55,.22)}
+.cert-label{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--crimson);margin-bottom:.6rem}
+.cert-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:400;color:var(--cream);margin-bottom:.3rem}
+.cert-sub{font-size:.78rem;color:var(--cream-dim)}
+.cert-badge{display:inline-flex;align-items:center;gap:.4rem;margin-top:.8rem;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;background:var(--crimson-glow);border:1px solid var(--border-red);color:rgba(197,3,55,.8);border-radius:100px}
+
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .about-left h2{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:400;line-height:1.1;margin-bottom:1.6rem}
 .about-left h2 em{font-style:italic;color:var(--crimson)}
@@ -160,7 +134,6 @@ section{position:relative;z-index:1}
 .about-quote{font-size:1rem;line-height:1.85;color:var(--cream-dim);padding:1.8rem 2rem;background:var(--surface);border:1px solid var(--border-c);border-left:2px solid var(--crimson);border-radius:0 12px 12px 0}
 .about-caveat{font-family:'Caveat',cursive;font-size:1.1rem;color:rgba(197,3,55,.5);letter-spacing:.05em;padding-left:.5rem}
 
-/* stickers */
 .stickers{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
 .sticker{display:inline-flex;align-items:center;gap:.45rem;padding:.52rem 1.1rem;border-radius:100px;font-size:.78rem;letter-spacing:.06em;transition:transform .2s;cursor:default}
 .sticker:hover{transform:scale(1.06) rotate(-1deg)}
@@ -168,7 +141,6 @@ section{position:relative;z-index:1}
 .s-r{background:rgba(197,3,55,.12);border:1px solid rgba(197,3,55,.25);color:#f08a9a}
 .s-g{background:rgba(212,160,58,.1);border:1px solid rgba(212,160,58,.24);color:var(--gold)}
 
-/* CONTACT */
 .contact{padding:10rem 6rem;text-align:center;position:relative;overflow:hidden}
 .cbg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 50% 50%,rgba(197,3,55,.08) 0%,transparent 70%)}
 .contact h2{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,6rem);font-weight:900;font-style:italic;line-height:1;margin-bottom:1.5rem;position:relative;z-index:1}
@@ -188,10 +160,7 @@ footer p{font-size:.68rem;letter-spacing:.07em;color:var(--cream-dim)}
 .reveal-d{transition-delay:.12s}
 .reveal-d2{transition-delay:.22s}
 
-/* RESPONSIVE */
-@media(max-width:1100px){
-  .craft-skills{grid-template-columns:repeat(3,1fr)}
-}
+@media(max-width:1100px){.craft-skills{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:900px){
   .sec-light,.sec-dark,.sec-mid,.contact{padding:5rem 2rem}
   nav{gap:1.2rem;padding:.65rem 1.4rem}
@@ -266,6 +235,27 @@ footer p{font-size:.68rem;letter-spacing:.07em;color:var(--cream-dim)}
 <section class="sec-light" id="work">
   <div class="ch"><span class="cn">I.</span> The Work</div>
   <div class="work-grid reveal">
+
+    <!-- ReqForge — Featured -->
+    <a class="wc feat" href="https://reqforge.duckdns.org" target="_blank">
+      <div>
+        <div class="live-badge"><span class="live-dot"></span> Live Product</div>
+        <div class="wtype">AI Engineering · RAG · Featured</div>
+        <div class="wtitle">ReqForge</div>
+        <div class="tags" style="margin-bottom:1.5rem">
+          <span class="tag">RAG Pipeline</span><span class="tag">LangChain</span>
+          <span class="tag">Python · FastAPI</span><span class="tag">Next.js</span>
+          <span class="tag">Docker · VPS</span><span class="tag">OCR</span>
+        </div>
+      </div>
+      <div>
+        <div class="wdesc">AI-powered document intelligence tool that transforms client business documents — PDFs, scanned files, Word docs — into structured software deliverables: requirements specs, database schemas, SQL scripts, workflow diagrams, and REST API documentation. Built end-to-end and deployed to production on a self-managed VPS with Docker and HTTPS.</div>
+        <div style="font-size:.78rem;color:var(--cream-dim);margin-bottom:1.2rem;line-height:1.7">Demo: <span style="color:var(--cream-dim)">demo@reqforge.in</span> &nbsp;·&nbsp; <span style="color:var(--cream-dim)">demo2026</span></div>
+        <span class="warr" style="opacity:1;transform:none;position:static;display:inline-block;margin-top:.5rem">View live ↗</span>
+      </div>
+    </a>
+
+    <!-- Alfred's Cheese -->
     <a class="wc feat" href="https://www.behance.net/gallery/145912315/Alfred-Cheese-Adobe/modules/824315279" target="_blank">
       <div>
         <div class="wtype">UI/UX · Case Study · Featured</div>
@@ -280,18 +270,21 @@ footer p{font-size:.68rem;letter-spacing:.07em;color:var(--cream-dim)}
         <span class="warr" style="opacity:1;transform:none;position:static;display:inline-block;margin-top:1rem">View on Behance ↗</span>
       </div>
     </a>
+
     <div class="wc">
       <div class="wtype">Infrastructure · Personal</div>
       <div class="wtitle">Self-Hosted Document Server</div>
       <div class="wdesc">Configured Paperless-ngx on cloud hardware with an automated backup pipeline — a centralised, searchable document system that reflects how structured retrieval systems work at their core.</div>
       <div class="tags"><span class="tag">Paperless-ngx</span><span class="tag">CLI</span><span class="tag">Cloud</span></div>
     </div>
+
     <div class="wc">
       <div class="wtype">Research · Accessibility</div>
       <div class="wtitle">Image-to-Speech App</div>
       <div class="wdesc">Accessibility app converting images to speech in English and Hindi (Devanagari) using Tesseract OCR and Google TTS. Full UI and branding designed independently.</div>
       <div class="tags"><span class="tag">FlutterFlow</span><span class="tag">Tesseract OCR</span><span class="tag">Google TTS</span></div>
     </div>
+
   </div>
 </section>
 
@@ -301,7 +294,7 @@ footer p{font-size:.68rem;letter-spacing:.07em;color:var(--cream-dim)}
   <div class="craft-skills reveal">
     <div class="sk"><div class="sk-num">01</div><div class="sk-title">Development</div><div class="tags"><span class="tag">FlutterFlow</span><span class="tag">WordPress</span><span class="tag">Python</span><span class="tag">HTML/CSS</span><span class="tag">SQL</span></div></div>
     <div class="sk"><div class="sk-num">02</div><div class="sk-title">Design</div><div class="tags"><span class="tag">Figma</span><span class="tag">Adobe XD</span><span class="tag">UI/UX</span><span class="tag">Prototyping</span><span class="tag">Canva</span></div></div>
-    <div class="sk"><div class="sk-num">03</div><div class="sk-title">AI Tools</div><div class="tags"><span class="tag">LLM APIs</span><span class="tag">Prompt Design</span><span class="tag">RAG Concepts</span><span class="tag">Agent Frameworks</span></div></div>
+    <div class="sk"><div class="sk-num">03</div><div class="sk-title">AI Tools</div><div class="tags"><span class="tag">LLM APIs</span><span class="tag">Prompt Design</span><span class="tag">RAG Pipelines</span><span class="tag">Agent Frameworks</span></div></div>
     <div class="sk"><div class="sk-num">04</div><div class="sk-title">Systems</div><div class="tags"><span class="tag">Six Sigma</span><span class="tag">Kanban</span><span class="tag">Workflow Automation</span><span class="tag">Postman</span></div></div>
     <div class="sk"><div class="sk-num">05</div><div class="sk-title">Tools</div><div class="tags"><span class="tag">Notion</span><span class="tag">ClickUp</span><span class="tag">Pipedrive</span><span class="tag">Play Console</span><span class="tag">Slack</span></div></div>
   </div>
@@ -321,7 +314,7 @@ footer p{font-size:.68rem;letter-spacing:.07em;color:var(--cream-dim)}
   </div>
 </section>
 
-<!-- ABOUT + PERSON -->
+<!-- ABOUT -->
 <section class="sec-mid" id="about">
   <div class="ch"><span class="cn">III.</span> The Mind Behind It</div>
   <div class="about-grid">
